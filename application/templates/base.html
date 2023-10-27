@@ -1,0 +1,30 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}My Django App{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-light">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/app/upload">Upload File</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/query">query</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/um/">User Management</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-2">
+          <a class="dropdown-item" href="/app/logout">Logout</a>
+        </ul>
+      </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+
+<form method="post" enctype="multipart/form-data" action="{% url 'upload' %}">
+    {% csrf_token %}
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+<script>
+    const fileInput = document.querySelector('input[type="file"]');
+    fileInput.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append('file', file);
+
+        axios.post('/upload/', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+            onUploadProgress: (progressEvent) => {
+                const percentCompleted = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+                console.log(`Upload progress: ${percentCompleted}%`);
+            },
+        });
+    });
+</script>

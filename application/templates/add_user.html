@@ -1,0 +1,29 @@
+<!-- myapp/templates/add_user.html -->
+<!-- <h1>Add User</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Create User</button>
+</form> -->
+
+<!-- add_user.html -->
+<h1>Register a New User</h1>
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" required>
+
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+
+    <br>
+
+    <button type="submit">Register</button>
+</form>

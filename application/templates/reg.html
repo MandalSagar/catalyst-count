@@ -1,0 +1,15 @@
+<!-- registration/login.html -->
+<!-- {% extends "base.html" %} -->
+
+{% block content %}
+  <div class="container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <a href="{% provider_login_url 'github' %}" class="btn btn-secondary">Login with GitHub</a>
+  </div>
+{% endblock %}
+{% load socialaccount %}

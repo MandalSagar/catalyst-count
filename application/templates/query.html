@@ -1,0 +1,75 @@
+<!-- myapp/templates/myapp/form_template.html -->
+{% extends "base.html" %}
+{% block content %}
+{% csrf_token %}
+<form method="post">
+    {% csrf_token %}
+
+    <br>
+    <!-- <label for="textfield">Keyword :</label> -->
+    <input type="text" name="textfield" id="textfield" maxlength="100" value="" placeholder="Keyword" style="width: 200px; border: 1px solid #000; height: 20px; border-radius: 2px;">
+
+    <!-- <label for="dropdown1">Industry :</label> -->
+    <select name="dropdown1" id="dropdown1" style="width: 200px;">
+        <option value="default" selected>Industry</option>
+        {% for option in dropdown1_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- <label for="dropdown2">Year Founded:</label> -->
+    <select name="dropdown2" id="dropdown2" style="width: 200px;">
+        <option value="default" selected>Year Founded</option>
+        {% for option in dropdown2_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+
+    <!-- <label for="dropdown3">City :</label> -->
+    <select name="dropdown3" id="dropdown3" style="width: 200px;">
+        <option value="default" selected>City</option>
+        {% for option in dropdown3_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- <label for="dropdown4">State :</label> -->
+    <select name="dropdown4" id="dropdown4" style="width: 200px;">
+        <option value="default" selected>State</option>
+        {% for option in dropdown4_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- <label for="dropdown5">Country :</label> -->
+    <select name="dropdown5" id="dropdown5" style="width: 200px;">
+        <option value="default" selected>Country</option>
+        {% for option in dropdown5_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+    
+    <br>
+
+    <!-- <label for="dropdown6">Employees From:</label> -->
+    <select name="dropdown6" id="dropdown6" style="width: 200px;">
+        <option value="default" selected>Employees From</option>
+        {% for option in dropdown6_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <!-- <label for="dropdown7">Employees To :</label> -->
+    <select name="dropdown7" id="dropdown7" style="width: 200px;">
+        <option value="default" selected>Employees To</option>
+        {% for option in dropdown7_options %}
+            <option value="{{ option }}">{{ option }}</option>
+        {% endfor %}
+    </select>
+
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

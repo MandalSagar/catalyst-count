@@ -1,0 +1,21 @@
+/* styles.css */
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    float: left;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}

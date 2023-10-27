@@ -1,0 +1,21 @@
+<!-- templates/login.html -->
+{% load socialaccount %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.username.label_tag }} {{ form.username }}
+    {{ form.password.label_tag }} {{ form.password }}
+    <button type="submit">Login</button>
+    <a href="{% provider_login_url 'github' %}">Login with GitHub</a>
+</form>
+<!-- {% if messages %}
+    {% for message in messages  %}            
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message : </strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% endfor %}    
+{% endif %} -->
+
+

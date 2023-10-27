@@ -1,0 +1,9 @@
+<!-- frontend.html -->
+{% extends "base.html" %}
+{% block content %}
+<form method="post" enctype="multipart/form-data" action="{% url 'upload_csv' %}">
+    {% csrf_token %}
+    <input type="file" name="csvfile">
+    <button type="submit">Upload CSV</button>
+</form>
+{% endblock %}

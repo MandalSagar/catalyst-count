@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Home - My Django App{% endblock %}
+
+{% block content %}
+{% csrf_token %}
+<h1>Welcome to the Home Page</h1>
+<!-- Add content specific to the home page -->
+{% endblock %}
